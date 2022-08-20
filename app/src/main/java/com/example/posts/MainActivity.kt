@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<List<Posts>>, t: Throwable) {
-                
+//                Toast.makeText(Toas)
             }
 
 
