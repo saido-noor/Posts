@@ -1,5 +1,6 @@
 package com.example.posts
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +20,13 @@ class PostAdapter(var postList: List<Posts>):RecyclerView.Adapter<PostViewHolder
                pId.text= currentPost.id.toString()
                titleId.text = currentPost.title
                bodId.text=currentPost.body
+               val context = holder.itemView.context
+               holder.binding.cvPost.setOnClickListener{
+                   val intent = Intent(context,CommentActivity::class.java)
+                   intent.putExtra("POST_ID",currentPost.id)
+                   context.startActivity(intent)
+               }
+
            }
     }
 
